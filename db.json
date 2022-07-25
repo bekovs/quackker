@@ -12,18 +12,43 @@
       "username": "Sultan",
       "password": "123",
       "id": 2
+    },
+    {
+      "username": "Poop",
+      "password": "123",
+      "id": 3
     }
   ],
   "posts": [
     {
-      "postBody": "Check this duck lmao",
-      "image": "https://images.unsplash.com/photo-1563409236302-8442b5e644df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZHVja3xlbnwwfHwwfHw%3D&w=1000&q=80",
+      "postBody": "che",
+      "image": "",
       "user": "Sultan",
       "userid": 2,
       "likes": [],
       "views": 0,
-      "date": "2022-07-25T15:02:22.530Z",
+      "date": "2022-07-25T15:09:44.354Z",
       "id": 1
+    },
+    {
+      "postBody": "123",
+      "image": "",
+      "user": "Sultan",
+      "userid": 2,
+      "likes": [],
+      "views": 0,
+      "date": "2022-07-25T15:23:21.524Z",
+      "id": 2
+    },
+    {
+      "postBody": "new ost",
+      "image": "",
+      "user": "Poop",
+      "userid": 3,
+      "likes": [],
+      "views": 0,
+      "date": "2022-07-25T15:32:17.252Z",
+      "id": 3
     }
   ]
 }

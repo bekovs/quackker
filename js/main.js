@@ -87,6 +87,13 @@ if (currentUser) {
   profile.innerHTML = currentUser.name;
 }
 
+function showDate(date) {
+  let now = new Date();
+  let dateTime = now - date;
+  dateTime = (dateTime / 1000) / 60
+  return Math.floor(dateTime)
+}
+
 btnAdd.addEventListener("click", async () => {
   let post = {
     postBody: postBody.value,
@@ -127,7 +134,7 @@ async function render() {
   // drawPageButtons();
   postsList.innerHTML = "";
 
-  posts.forEach(async (post) => {
+  posts.reverse().forEach(async (post) => {
     let newPost = document.createElement("div");
     let heart = "heart.svg";
     if (currentUser && post.likes) {
@@ -137,17 +144,16 @@ async function render() {
         }
       });
     }
-    if (!post.image){
-      console.log('hey')
-    } else {
-      console.log('not hey')
-    }
-    newPost.innerHTML = `<div class="card m-2" style="width: 50vw;">
+    if (currentUser) {
+      if(currentUser.id == post.userid) {
+        newPost.innerHTML = `<div class="card m-2" style="width: 50vw;">
       <img src=${post.image} class="card-img-top" alt="">
       <div class="card-body">
+        <h5 class="card-title">${post.user}</h5>
+        <hr>
         <p class="card-text">${post.postBody}</p>
         <br>
-        <p class="card-text postedby">post by ${post.user}</p>
+        <p class="card-text postedby">${showDate(Date.parse(post.date))} min ago</p>
         <div class="d-flex justify-content-between">
           <div class="likes-and-views">
             <a href="#" class="like-heart" id="${
@@ -172,6 +178,54 @@ async function render() {
       </div>
     </div>
   `;
+      } else {
+        newPost.innerHTML = `<div class="card m-2" style="width: 50vw;">
+          <img src=${post.image} class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">${post.user}</h5>
+            <hr>
+            <p class="card-text">${post.postBody}</p>
+            <br>
+            <p class="card-text postedby">${showDate(Date.parse(post.date))} min ago</p>
+            <div class="d-flex justify-content-between">
+              <div class="likes-and-views">
+                <a href="#" class="like-heart" id="${
+                  post.id
+                }"><img class="like-heart" id="${
+          post.id
+        }" src="./assets/icons/${heart}"></a>
+                <a href="#" class="likes" id="${post.id}">${post.likes.length}</a>
+                <span class="views" id="${post.id}">views</span>
+                <span class="views-count" id="${post.id}">1</span>
+              </div>
+          </div>
+        </div>
+      `;
+      }
+    } else {
+      newPost.innerHTML = `<div class="card m-2" style="width: 50vw;">
+          <img src=${post.image} class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">${post.user}</h5>
+            <hr>
+            <p class="card-text">${post.postBody}</p>
+            <br>
+            <p class="card-text postedby">${showDate(Date.parse(post.date))} min ago</p>
+            <div class="d-flex justify-content-between">
+              <div class="likes-and-views">
+                <a href="#" class="like-heart" id="${
+                  post.id
+                }"><img class="like-heart" id="${
+          post.id
+        }" src="./assets/icons/${heart}"></a>
+                <a href="#" class="likes" id="${post.id}">${post.likes.length}</a>
+                <span class="views" id="${post.id}">views</span>
+                <span class="views-count" id="${post.id}">1</span>
+              </div>
+          </div>
+        </div>
+      `;
+    }
     postsList.append(newPost);
   });
 }
