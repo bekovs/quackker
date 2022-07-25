@@ -126,10 +126,27 @@ async function render() {
 
   posts.forEach(async (post) => {
     let newPost = document.createElement("div");
+    let heart = 'heart.svg'
+    if (currentUser && post.likes) {
+      post.likes.forEach((user) => {
+        if (user.id == currentUser.id) {
+          heart = 'heart-fill.svg';
+        }
+      })
+    }
     newPost.innerHTML = `<div class="card m-2" style="width: 50vw;">
       <img src=${post.image} class="card-img-top" alt="">
       <div class="card-body">
         <p class="card-text">${post.postBody}</p>
+        <br>
+        <p class="card-text postedby">post by ${await getUserName(post.user)}</p>
+        <div class="d-flex justify-content-between">
+          <div class="likes-and-views">
+            <a href="#" class="like-heart" id="${post.id}"><img class="like-heart" id="${post.id}" src="./assets/icons/${heart}"></a>
+            <a href="#" class="likes" id="${post.id}">${post.likes.length}</a>
+            <span class="views" id="${post.id}">views</span>
+            <span class="views-count" id="${post.id}">1</span>
+          </div>
         <p class="card-text postedby">post by ${await getUserName(
           post.user
         )}</p>
@@ -209,9 +226,43 @@ function saveEdit(edittedPost, id) {
   });
 }
 
-render();
+document.addEventListener('click', async (e) => {
+  if (e.target.classList.contains("like-heart")) {
+    e.target.src = './assets/icons/heart-fill.svg'    
+    let post = await fetch(`${API_Posts}/${e.target.id}`).then((data) => data.json());
+    likesArr = [];
+    post.likes.forEach((user) => {
+      likesArr.push(user);
+    })
+    console.log(likesArr)
+    let checkForLiked = false;
+    likesArr.forEach((user) => {
+      if (user.id == currentUser.id) {
+        checkForLiked = true;
+      }
+    })
+
+    if (!checkForLiked) {
+      likesArr.push(currentUser);
+    }
+
+    let likes = {
+      likes: likesArr
+    };
+
+    fetch(`${API_Posts}/${e.target.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(likes)
+    })
+  }
+})
 
 logout.addEventListener("click", () => {
   localStorage.clear();
   window.location.reload();
 });
+
+render()

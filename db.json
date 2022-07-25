@@ -34,7 +34,16 @@
       "postBody": "123",
       "image": "",
       "user": 1,
-      "likes": 0,
+      "likes": [
+        {
+          "id": 4,
+          "name": "Bado"
+        },
+        {
+          "id": 3,
+          "name": "Beks"
+        }
+      ],
       "views": 0,
       "id": 1
     },
@@ -42,15 +51,29 @@
       "postBody": "asd",
       "image": "",
       "user": 1,
-      "likes": 0,
+      "likes": [
+        {
+          "id": 4,
+          "name": "Bado"
+        }
+      ],
       "views": 0,
       "id": 2
     },
     {
-      "postBody": "123",
+      "postBody": "123456",
       "image": "",
       "user": 1,
-      "likes": 0,
+      "likes": [
+        {
+          "id": 4,
+          "name": "Bado"
+        },
+        {
+          "id": 3,
+          "name": "Beks"
+        }
+      ],
       "views": 0,
       "id": 3
     },
@@ -58,7 +81,16 @@
       "postBody": "asasdadasdasd",
       "image": "",
       "user": 2,
-      "likes": 0,
+      "likes": [
+        {
+          "id": 4,
+          "name": "Bado"
+        },
+        {
+          "id": 3,
+          "name": "Beks"
+        }
+      ],
       "views": 0,
       "id": 4
     },
@@ -66,7 +98,20 @@
       "postBody": "asdadadsadasdasdasdasd",
       "image": "",
       "user": 2,
-      "likes": 0,
+      "likes": [
+        {
+          "id": 2,
+          "name": "Sultan"
+        },
+        {
+          "id": 4,
+          "name": "Bado"
+        },
+        {
+          "id": 3,
+          "name": "Beks"
+        }
+      ],
       "views": 0,
       "id": 5
     },
