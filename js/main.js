@@ -91,7 +91,8 @@ btnAdd.addEventListener("click", async () => {
   let post = {
     postBody: postBody.value,
     image: image.value,
-    user: currentUser.id, // current user id
+    user: currentUser.name, // current user name
+    userid: currentUser.id,
     likes: [],
     views: 0,
     date: new Date(),
@@ -136,14 +137,17 @@ async function render() {
         }
       });
     }
+    if (!post.image){
+      console.log('hey')
+    } else {
+      console.log('not hey')
+    }
     newPost.innerHTML = `<div class="card m-2" style="width: 50vw;">
       <img src=${post.image} class="card-img-top" alt="">
       <div class="card-body">
         <p class="card-text">${post.postBody}</p>
         <br>
-        <p class="card-text postedby">post by ${await getUserName(
-          post.user
-        )}</p>
+        <p class="card-text postedby">post by ${post.user}</p>
         <div class="d-flex justify-content-between">
           <div class="likes-and-views">
             <a href="#" class="like-heart" id="${
@@ -236,14 +240,14 @@ document.addEventListener("click", (e) => {
   }
 });
 render();
-function getUserName(id) {
-  let res = fetch(`${API_Users}/${id}`)
-    .then((data) => data.json())
-    .then((result) => {
-      return result.username;
-    });
-  return res;
-}
+// function getUserName(id) {
+//   let res = fetch(`${API_Users}/${id}`)
+//     .then((data) => data.json())
+//     .then((result) => {
+//       return result.username;
+//     });
+//   return res;
+// }
 
 // delete
 document.addEventListener("click", async (e) => {

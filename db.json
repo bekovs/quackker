@@ -12,151 +12,18 @@
       "username": "Sultan",
       "password": "123",
       "id": 2
-    },
-    {
-      "username": "Beks",
-      "password": "228",
-      "id": 3
-    },
-    {
-      "username": "Bado",
-      "password": "123",
-      "id": 4
-    },
-    {
-      "username": "rage_ghoul",
-      "password": "000",
-      "id": 5
-    },
-    {
-      "username": "renat",
-      "password": "diplomat",
-      "id": 6
-    },
-    {
-      "username": "eldiyar",
-      "password": "123",
-      "id": 7
     }
   ],
   "posts": [
     {
-      "postBody": "asd",
-      "image": "",
-      "user": 1,
-      "likes": [
-        {
-          "id": 4,
-          "name": "Bado"
-        },
-        {
-          "id": 3,
-          "name": "Beks"
-        },
-        {
-          "id": 5,
-          "name": "rage_ghoul"
-        },
-        {
-          "id": 2,
-          "name": "Sultan"
-        }
-      ],
+      "postBody": "Check this duck lmao",
+      "image": "https://images.unsplash.com/photo-1563409236302-8442b5e644df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZHVja3xlbnwwfHwwfHw%3D&w=1000&q=80",
+      "user": "Sultan",
+      "userid": 2,
+      "likes": [],
       "views": 0,
+      "date": "2022-07-25T15:02:22.530Z",
       "id": 1
-    },
-    {
-      "postBody": "asd",
-      "image": "",
-      "user": 1,
-      "likes": [
-        {
-          "id": 4,
-          "name": "Bado"
-        },
-        {
-          "id": 3,
-          "name": "Beks"
-        },
-        {
-          "id": 2,
-          "name": "Sultan"
-        }
-      ],
-      "views": 0,
-      "id": 2
-    },
-    {
-      "postBody": "123456",
-      "image": "",
-      "user": 1,
-      "likes": [
-        {
-          "id": 4,
-          "name": "Bado"
-        },
-        {
-          "id": 3,
-          "name": "Beks"
-        },
-        {
-          "id": 5,
-          "name": "rage_ghoul"
-        }
-      ],
-      "views": 0,
-      "id": 3
-    },
-    {
-      "postBody": "asasdadasdasd",
-      "image": "",
-      "user": 2,
-      "likes": [
-        {
-          "id": 4,
-          "name": "Bado"
-        },
-        {
-          "id": 3,
-          "name": "Beks"
-        },
-        {
-          "id": 7,
-          "name": "eldiyar"
-        },
-        {
-          "id": 5,
-          "name": "rage_ghoul"
-        }
-      ],
-      "views": 0,
-      "id": 4
-    },
-    {
-      "postBody": "asdadadsadasdasdasdasd",
-      "image": "",
-      "user": 2,
-      "likes": [],
-      "views": 0,
-      "id": 5
-    },
-    {
-      "postBody": "emir",
-      "image": "emir",
-      "user": 5,
-      "likes": [],
-      "views": 0,
-      "date": "2022-07-25T11:20:51.241Z",
-      "id": 6
-    },
-    {
-      "postBody": "finalo4ka",
-      "image": "fdsafdsaf",
-      "user": 5,
-      "likes": [],
-      "views": 0,
-      "date": "2022-07-25T11:35:54.852Z",
-      "id": 7
     }
   ]
 }
