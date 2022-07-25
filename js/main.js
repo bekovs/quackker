@@ -13,6 +13,7 @@ let profileBtn = document.querySelector(".profile-btn");
 let loginNav = document.querySelector(".login");
 let helloHead = document.querySelector(".hello");
 
+let postAddElem = document.querySelector('.post-add');
 let postBody = document.querySelector("#post-body");
 let image = document.querySelector("#image");
 let btnAdd = document.querySelector("#btn-add");
@@ -78,6 +79,7 @@ let currentUser = JSON.parse(localStorage.getItem("currentUser"));
 // helloHead.innerText += " " + currentUser.name
 
 if (currentUser) {
+  postAddElem.setAttribute('class', 'w-100 d-flex flex-column justify-content-center align-items-center')
   remFirst.remove();
   remSecond.remove();
   profile.style.display = `block`;
@@ -147,9 +149,6 @@ async function render() {
             <span class="views" id="${post.id}">views</span>
             <span class="views-count" id="${post.id}">1</span>
           </div>
-        <p class="card-text postedby">post by ${await getUserName(
-          post.user
-        )}</p>
         <div class="d-flex justify-content-end">
           <div>
             <a href="#" class="btn btn-primary btn-delete" id=${
