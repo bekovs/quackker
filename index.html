@@ -46,7 +46,7 @@
               class="form-control me-2"
               type="search"
               placeholder="Search"
-              aria-label="Search"
+              aria-label="Search" id="searchInp"
             />
           </form>
           <ul class="navbar-nav login mx-2">
@@ -191,7 +191,7 @@
             >
               Close
             </button>
-            <button type="button" class="btn btn-primary" id="LogIn">
+            <button type="submit" class="btn btn-primary" id="LogIn">
               Submit
             </button>
              
@@ -269,7 +269,20 @@
       </div>
     </div>
     <!-- end modal edit -->
-    
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item prev">
+          <a class="page-link">Previous</a>
+        </li>
+        <!-- <li class="page-item"><a class="page-link" href="#">1</a></li> -->
+
+        <div class="pagination-list d-flex"></div>
+
+        <li class="page-item next">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"

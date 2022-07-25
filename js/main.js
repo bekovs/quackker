@@ -22,7 +22,7 @@ let postsList = document.querySelector("#posts-list");
 let editPost = document.querySelector("#edit-post-body");
 let editImage = document.querySelector("#edit-image");
 let btnSaveEdit = document.querySelector("#btn-save-edit");
-
+let searchInp = document.querySelector("#searchInp");
 let currentPage = 1;
 let searchVal = "";
 
@@ -118,9 +118,9 @@ btnAdd.addEventListener("click", async () => {
 
 async function render() {
   let posts = await fetch(
-    `${API_Posts}?q=${searchVal}&_page=${currentPage}&_limit=10`
+    `${API_Posts}?q=${searchVal}&_page=${currentPage}&_limit=5`
   ).then((res) => res.json());
-
+  drawPageButtons();
   //   console.log(posts);
 
   // drawPageButtons();
@@ -128,23 +128,29 @@ async function render() {
 
   posts.forEach(async (post) => {
     let newPost = document.createElement("div");
-    let heart = 'heart.svg'
+    let heart = "heart.svg";
     if (currentUser && post.likes) {
       post.likes.forEach((user) => {
         if (user.id == currentUser.id) {
-          heart = 'heart-fill.svg';
+          heart = "heart-fill.svg";
         }
-      })
+      });
     }
     newPost.innerHTML = `<div class="card m-2" style="width: 50vw;">
       <img src=${post.image} class="card-img-top" alt="">
       <div class="card-body">
         <p class="card-text">${post.postBody}</p>
         <br>
-        <p class="card-text postedby">post by ${await getUserName(post.user)}</p>
+        <p class="card-text postedby">post by ${await getUserName(
+          post.user
+        )}</p>
         <div class="d-flex justify-content-between">
           <div class="likes-and-views">
-            <a href="#" class="like-heart" id="${post.id}"><img class="like-heart" id="${post.id}" src="./assets/icons/${heart}"></a>
+            <a href="#" class="like-heart" id="${
+              post.id
+            }"><img class="like-heart" id="${
+      post.id
+    }" src="./assets/icons/${heart}"></a>
             <a href="#" class="likes" id="${post.id}">${post.likes.length}</a>
             <span class="views" id="${post.id}">views</span>
             <span class="views-count" id="${post.id}">1</span>
@@ -165,7 +171,71 @@ async function render() {
     postsList.append(newPost);
   });
 }
+searchInp.addEventListener("input", () => {
+  searchVal = searchInp.value;
+  currentPage = 1;
+  render();
+});
+// ?pagination
+let prev = document.querySelector(".prev");
+let next = document.querySelector(".next");
+let paginationList = document.querySelector(".pagination-list");
 
+let pageTotalCount = 1;
+function drawPageButtons() {
+  fetch(`${API_Posts}?q=${searchVal}`)
+    .then((res) => res.json())
+    .then((data) => {
+      // console.log(data.length);
+      pageTotalCount = Math.ceil(data.length / 4);
+      paginationList.innerHTML = ``;
+      for (let i = 1; i <= pageTotalCount; i++) {
+        if (currentPage == i) {
+          let page = document.createElement("li");
+          paginationList.append(page);
+          page.innerHTML = `<li class="page-item active"><a class="page-link page_number" href="#">${i}</a></li>`;
+        } else {
+          let page = document.createElement("li");
+          paginationList.append(page);
+          page.innerHTML = `<li class="page-item"><a class="page-link page_number" href="#">${i}</a></li>`;
+        }
+      }
+      if (currentPage == 1) {
+        prev.classList.add("disabled");
+      } else {
+        prev.classList.remove("disabled");
+      }
+      if (currentPage == pageTotalCount) {
+        next.classList.add("disabled");
+      } else {
+        next.classList.remove("disabled");
+      }
+    });
+}
+
+prev.addEventListener("click", (e) => {
+  if (currentPage <= 1) {
+    return;
+  }
+  currentPage--;
+  render();
+});
+
+next.addEventListener("click", (e) => {
+  if (currentPage >= pageTotalCount) {
+    return;
+  }
+  currentPage++;
+  render();
+});
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("page_number")) {
+    currentPage = e.target.innerText;
+    render();
+  }
+});
+render();
 function getUserName(id) {
   let res = fetch(`${API_Users}/${id}`)
     .then((data) => data.json())
@@ -225,28 +295,30 @@ function saveEdit(edittedPost, id) {
   });
 }
 
-document.addEventListener('click', async (e) => {
+document.addEventListener("click", async (e) => {
   if (e.target.classList.contains("like-heart")) {
-    e.target.src = './assets/icons/heart-fill.svg'    
-    let post = await fetch(`${API_Posts}/${e.target.id}`).then((data) => data.json());
+    e.target.src = "./assets/icons/heart-fill.svg";
+    let post = await fetch(`${API_Posts}/${e.target.id}`).then((data) =>
+      data.json()
+    );
     likesArr = [];
     post.likes.forEach((user) => {
       likesArr.push(user);
-    })
-    console.log(likesArr)
+    });
+    console.log(likesArr);
     let checkForLiked = false;
     likesArr.forEach((user) => {
       if (user.id == currentUser.id) {
         checkForLiked = true;
       }
-    })
+    });
 
     if (!checkForLiked) {
       likesArr.push(currentUser);
     }
 
     let likes = {
-      likes: likesArr
+      likes: likesArr,
     };
 
     fetch(`${API_Posts}/${e.target.id}`, {
@@ -254,14 +326,14 @@ document.addEventListener('click', async (e) => {
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify(likes)
-    })
+      body: JSON.stringify(likes),
+    });
   }
-})
+});
 
 logout.addEventListener("click", () => {
   localStorage.clear();
   window.location.reload();
 });
 
-render()
+render();

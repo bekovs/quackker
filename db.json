@@ -27,11 +27,21 @@
       "username": "rage_ghoul",
       "password": "000",
       "id": 5
+    },
+    {
+      "username": "renat",
+      "password": "diplomat",
+      "id": 6
+    },
+    {
+      "username": "eldiyar",
+      "password": "123",
+      "id": 7
     }
   ],
   "posts": [
     {
-      "postBody": "123",
+      "postBody": "asd",
       "image": "",
       "user": 1,
       "likes": [
@@ -42,6 +52,10 @@
         {
           "id": 3,
           "name": "Beks"
+        },
+        {
+          "id": 5,
+          "name": "rage_ghoul"
         },
         {
           "id": 2,
@@ -84,6 +98,10 @@
         {
           "id": 3,
           "name": "Beks"
+        },
+        {
+          "id": 5,
+          "name": "rage_ghoul"
         }
       ],
       "views": 0,
@@ -103,8 +121,12 @@
           "name": "Beks"
         },
         {
-          "id": 2,
-          "name": "Sultan"
+          "id": 7,
+          "name": "eldiyar"
+        },
+        {
+          "id": 5,
+          "name": "rage_ghoul"
         }
       ],
       "views": 0,
@@ -114,40 +136,27 @@
       "postBody": "asdadadsadasdasdasdasd",
       "image": "",
       "user": 2,
-      "likes": [
-        {
-          "id": 2,
-          "name": "Sultan"
-        },
-        {
-          "id": 4,
-          "name": "Bado"
-        },
-        {
-          "id": 3,
-          "name": "Beks"
-        }
-      ],
+      "likes": [],
       "views": 0,
       "id": 5
     },
     {
-      "postBody": "hello world",
-      "image": "https://i.ytimg.com/vi/_Ef76tOZU44/hqdefault.jpg",
-      "user": 1,
-      "likes": [
-        {
-          "id": 3,
-          "name": "Beks"
-        },
-        {
-          "id": 2,
-          "name": "Sultan"
-        }
-      ],
+      "postBody": "emir",
+      "image": "emir",
+      "user": 5,
+      "likes": [],
       "views": 0,
-      "date": "2022-07-25T09:55:32.437Z",
+      "date": "2022-07-25T11:20:51.241Z",
       "id": 6
+    },
+    {
+      "postBody": "finalo4ka",
+      "image": "fdsafdsaf",
+      "user": 5,
+      "likes": [],
+      "views": 0,
+      "date": "2022-07-25T11:35:54.852Z",
+      "id": 7
     }
   ]
 }
