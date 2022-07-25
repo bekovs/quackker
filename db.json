@@ -24,15 +24,7 @@
       "id": 1
     },
     {
-      "postBody": "Some new post",
-      "image": "",
-      "user": 1,
-      "likes": 0,
-      "views": 0,
-      "id": 2
-    },
-    {
-      "postBody": "New duck coming out",
+      "postBody": "New duck coming out wee",
       "image": "https://cdn.britannica.com/92/100692-050-5B69B59B/Mallard.jpg",
       "user": 1,
       "likes": 0,
