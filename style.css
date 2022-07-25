@@ -40,3 +40,15 @@
 
 .card-body .btn {
 }
+
+.page_number {
+  border-radius: 0 !important;
+}
+
+.nav-link:hover {
+  color: rgb(194, 194, 194) !important;
+}
+
+.profile-nav {
+  width: 150px;
+}

@@ -25,7 +25,12 @@
       "image": "",
       "user": "Sultan",
       "userid": 2,
-      "likes": [],
+      "likes": [
+        {
+          "id": 3,
+          "name": "Poop"
+        }
+      ],
       "views": 0,
       "date": "2022-07-25T15:09:44.354Z",
       "id": 1
@@ -35,7 +40,12 @@
       "image": "",
       "user": "Sultan",
       "userid": 2,
-      "likes": [],
+      "likes": [
+        {
+          "id": 3,
+          "name": "Poop"
+        }
+      ],
       "views": 0,
       "date": "2022-07-25T15:23:21.524Z",
       "id": 2
@@ -45,7 +55,12 @@
       "image": "",
       "user": "Poop",
       "userid": 3,
-      "likes": [],
+      "likes": [
+        {
+          "id": 3,
+          "name": "Poop"
+        }
+      ],
       "views": 0,
       "date": "2022-07-25T15:32:17.252Z",
       "id": 3

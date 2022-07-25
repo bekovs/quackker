@@ -379,13 +379,19 @@ document.addEventListener("click", async (e) => {
       likes: likesArr,
     };
 
-    fetch(`${API_Posts}/${e.target.id}`, {
+    await fetch(`${API_Posts}/${e.target.id}`, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json",
       },
       body: JSON.stringify(likes),
     });
+    let like = document.querySelectorAll('.likes');
+    like.forEach((el) => {
+      if (el.id == e.target.id) {
+        el.innerText = post.likes.length;
+      }
+    })
   }
 });
 

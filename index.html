@@ -35,7 +35,7 @@
        
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavDropdown">
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page">Quackker</a>
@@ -57,7 +57,7 @@
                 data-bs-target="#staticBackdrop"
                 aria-current="page"
                 href="#"
-                >Sign in</a
+                >Sign in </a
               >
             </li>
             <li class="nav-item remSecond">
@@ -66,19 +66,20 @@
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
                 href="#"
-                >Sign up</a
+                > Sign up</a
               >
             </li>  
+          </ul>
             <!--  -->
-            <div class="d-flex ">
-          <a class="nav-link active profile"
-          data-bs-toggle="modal"
-          data-bs-target="#LogOut" href="#">Profile
-        </a>
-        <button id="logout-submit" class="btn btn-primary profile-btn">
-          Log Out
-        </button>
-      </div>
+            <div class="d-flex align-items-center justify-content-between profile-nav">
+              <a class="nav-link active profile"
+                data-bs-toggle="modal"
+                data-bs-target="#LogOut" href="#">Profile
+              </a>
+              <button id="logout-submit" class="btn btn-primary profile-btn">
+                Log Out
+              </button>
+            </div>
         </div>
       </div>
     </nav>
@@ -202,7 +203,6 @@
    
     <!-- end of modal window for sign in -->
     <!-- post add -->
-
     <div class="post-add w-100 d-none flex-column justify-content-center align-items-center">
       <h2 class="hello my-3 align-self-center">Hello, and welcome to Quackker</h2>
       <div class="form-floating my-2 w-50">
