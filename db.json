@@ -1,5 +1,7 @@
 {
-  "currentUser": { "id": 0 },
+  "currentUser": {
+    "id": 0
+  },
   "users": [
     {
       "username": "emir.akimzhanov",
@@ -7,5 +9,30 @@
       "id": 1
     }
   ],
-  "posts": []
+  "posts": [
+    {
+      "postBody": "Hello",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Grave_eend_maasmuur.jpg/640px-Grave_eend_maasmuur.jpg",
+      "user": 1,
+      "likes": 0,
+      "views": 0,
+      "id": 1
+    },
+    {
+      "postBody": "Some new post",
+      "image": "",
+      "user": 1,
+      "likes": 0,
+      "views": 0,
+      "id": 2
+    },
+    {
+      "postBody": "New duck coming out",
+      "image": "https://cdn.britannica.com/92/100692-050-5B69B59B/Mallard.jpg",
+      "user": 1,
+      "likes": 0,
+      "views": 0,
+      "id": 3
+    }
+  ]
 }
