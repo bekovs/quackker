@@ -162,7 +162,6 @@ async function render() {
       post.id
     }" src="./assets/icons/${heart}"></a>
             <a href="#" class="likes" id="${post.id}">${post.likes.length}</a>
-            <span class="views" id="${post.id}">views</span>
             <span class="views-count" id="${post.id}">1</span>
           </div>
         <div class="d-flex justify-content-end">
@@ -195,7 +194,6 @@ async function render() {
           post.id
         }" src="./assets/icons/${heart}"></a>
                 <a href="#" class="likes" id="${post.id}">${post.likes.length}</a>
-                <span class="views" id="${post.id}">views</span>
                 <span class="views-count" id="${post.id}">1</span>
               </div>
           </div>
@@ -219,7 +217,6 @@ async function render() {
           post.id
         }" src="./assets/icons/${heart}"></a>
                 <a href="#" class="likes" id="${post.id}">${post.likes.length}</a>
-                <span class="views" id="${post.id}">views</span>
                 <span class="views-count" id="${post.id}">1</span>
               </div>
           </div>
