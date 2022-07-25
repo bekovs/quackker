@@ -90,7 +90,7 @@ btnAdd.addEventListener("click", async () => {
     postBody: postBody.value,
     image: image.value,
     user: currentUser.id, // current user id
-    likes: 0,
+    likes: [],
     views: 0,
     date: new Date(),
   };
