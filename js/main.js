@@ -6,10 +6,12 @@ let passwordSignIn = document.querySelector("#passwordSignIn");
 let remFirst = document.querySelector(".remFirst");
 let remSecond = document.querySelector(".remSecond");
 let LogIn = document.querySelector("#LogIn");
-let logout = document.querySelector('#logout-submit');
+let logout = document.querySelector("#logout-submit");
+console.log(logout);
 let profile = document.querySelector(".profile");
+let profileBtn = document.querySelector(".profile-btn");
 let loginNav = document.querySelector(".login");
-let helloHead = document.querySelector('.hello')
+let helloHead = document.querySelector(".hello");
 
 let postBody = document.querySelector("#post-body");
 let image = document.querySelector("#image");
@@ -79,6 +81,7 @@ if (currentUser) {
   remFirst.remove();
   remSecond.remove();
   profile.style.display = `block`;
+  profileBtn.style.display = `block`;
   profile.innerHTML = currentUser.name;
 }
 
@@ -89,7 +92,7 @@ btnAdd.addEventListener("click", async () => {
     user: currentUser.id, // current user id
     likes: 0,
     views: 0,
-    date: new Date()
+    date: new Date(),
   };
 
   if (!post.postBody.trim()) {
@@ -127,11 +130,17 @@ async function render() {
       <img src=${post.image} class="card-img-top" alt="">
       <div class="card-body">
         <p class="card-text">${post.postBody}</p>
-        <p class="card-text postedby">post by ${await getUserName(post.user)}</p>
+        <p class="card-text postedby">post by ${await getUserName(
+          post.user
+        )}</p>
         <div class="d-flex justify-content-end">
           <div>
-            <a href="#" class="btn btn-primary btn-delete" id=${post.id}>DELETE</a>
-            <a href="#" data-bs-toggle="modal" data-bs-target="#editModal" id=${post.id} class="btn btn-primary btn-edit">EDIT</a>
+            <a href="#" class="btn btn-primary btn-delete" id=${
+              post.id
+            }>DELETE</a>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#editModal" id=${
+              post.id
+            } class="btn btn-primary btn-edit">EDIT</a>
           </div>
         </div>
       </div>
@@ -142,10 +151,12 @@ async function render() {
 }
 
 function getUserName(id) {
-  let res = fetch(`${API_Users}/${id}`).then((data) => data.json()).then((result) => {
-    return result.username
-  })
-  return res
+  let res = fetch(`${API_Users}/${id}`)
+    .then((data) => data.json())
+    .then((result) => {
+      return result.username;
+    });
+  return res;
 }
 
 // delete
@@ -198,4 +209,9 @@ function saveEdit(edittedPost, id) {
   });
 }
 
-render()
+render();
+
+logout.addEventListener("click", () => {
+  localStorage.clear();
+  window.location.reload();
+});
