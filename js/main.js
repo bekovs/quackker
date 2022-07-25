@@ -6,8 +6,10 @@ let passwordSignIn = document.querySelector("#passwordSignIn");
 let remFirst = document.querySelector(".remFirst");
 let remSecond = document.querySelector(".remSecond");
 let LogIn = document.querySelector("#LogIn");
+let logout = document.querySelector('#logout-submit');
 let profile = document.querySelector(".profile");
 let loginNav = document.querySelector(".login");
+let helloHead = document.querySelector('.hello')
 
 let postBody = document.querySelector("#post-body");
 let image = document.querySelector("#image");
@@ -70,7 +72,8 @@ LogIn.addEventListener("click", () => {
 });
 
 let currentUser = JSON.parse(localStorage.getItem("currentUser"));
-console.log(currentUser);
+
+// helloHead.innerText += " " + currentUser.name
 
 if (currentUser) {
   remFirst.remove();
@@ -83,9 +86,10 @@ btnAdd.addEventListener("click", async () => {
   let post = {
     postBody: postBody.value,
     image: image.value,
-    user: 1, // current user id
+    user: currentUser.id, // current user id
     likes: 0,
     views: 0,
+    date: new Date()
   };
 
   if (!post.postBody.trim()) {
@@ -109,7 +113,7 @@ btnAdd.addEventListener("click", async () => {
 
 async function render() {
   let posts = await fetch(
-    `${API_Posts}?q=${searchVal}&_page=${currentPage}&_limit=5`
+    `${API_Posts}?q=${searchVal}&_page=${currentPage}&_limit=10`
   ).then((res) => res.json());
 
   //   console.log(posts);
@@ -117,19 +121,33 @@ async function render() {
   // drawPageButtons();
   postsList.innerHTML = "";
 
-  posts.forEach((post) => {
+  posts.forEach(async (post) => {
     let newPost = document.createElement("div");
     newPost.innerHTML = `<div class="card m-2" style="width: 50vw;">
-    <img src=${post.image} class="card-img-top" alt="">
-    <div class="card-body">
-      <p class="card-text">${post.postBody}</p>
-      <a href="#" class="btn btn-primary btn-delete" id=${post.id}>DELETE</a>
-      <a href="#" data-bs-toggle="modal" data-bs-target="#editModal" id=${post.id} class="btn btn-primary btn-edit">EDIT</a>
+      <img src=${post.image} class="card-img-top" alt="">
+      <div class="card-body">
+        <p class="card-text">${post.postBody}</p>
+        <p class="card-text postedby">post by ${await getUserName(post.user)}</p>
+        <div class="d-flex justify-content-end">
+          <div>
+            <a href="#" class="btn btn-primary btn-delete" id=${post.id}>DELETE</a>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#editModal" id=${post.id} class="btn btn-primary btn-edit">EDIT</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>`;
+  `;
     postsList.append(newPost);
   });
 }
+
+function getUserName(id) {
+  let res = fetch(`${API_Users}/${id}`).then((data) => data.json()).then((result) => {
+    return result.username
+  })
+  return res
+}
+
 // delete
 document.addEventListener("click", async (e) => {
   if (e.target.classList.contains("btn-delete")) {
