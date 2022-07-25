@@ -22,6 +22,11 @@
       "username": "Bado",
       "password": "123",
       "id": 4
+    },
+    {
+      "username": "rage_ghoul",
+      "password": "000",
+      "id": 5
     }
   ],
   "posts": [
@@ -64,6 +69,15 @@
       "likes": 0,
       "views": 0,
       "id": 5
+    },
+    {
+      "postBody": "hello world",
+      "image": "https://i.ytimg.com/vi/_Ef76tOZU44/hqdefault.jpg",
+      "user": 1,
+      "likes": 0,
+      "views": 0,
+      "date": "2022-07-25T09:55:32.437Z",
+      "id": 6
     }
   ]
 }
