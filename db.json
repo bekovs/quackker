@@ -9,35 +9,61 @@
       "id": 1
     },
     {
-      "username": "fdsaf",
-      "password": "fdsafdsa",
+      "username": "Sultan",
+      "password": "123",
       "id": 2
+    },
+    {
+      "username": "Beks",
+      "password": "228",
+      "id": 3
+    },
+    {
+      "username": "Bado",
+      "password": "123",
+      "id": 4
     }
   ],
   "posts": [
     {
-      "postBody": "Hello",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Grave_eend_maasmuur.jpg/640px-Grave_eend_maasmuur.jpg",
+      "postBody": "123",
+      "image": "",
       "user": 1,
       "likes": 0,
       "views": 0,
       "id": 1
     },
     {
-      "postBody": "New duck coming out wee",
-      "image": "https://cdn.britannica.com/92/100692-050-5B69B59B/Mallard.jpg",
+      "postBody": "asd",
+      "image": "",
+      "user": 1,
+      "likes": 0,
+      "views": 0,
+      "id": 2
+    },
+    {
+      "postBody": "123",
+      "image": "",
       "user": 1,
       "likes": 0,
       "views": 0,
       "id": 3
     },
     {
-      "postBody": "fdsafdsa",
-      "image": "fdsafsda",
-      "user": 1,
+      "postBody": "asasdadasdasd",
+      "image": "",
+      "user": 2,
       "likes": 0,
       "views": 0,
       "id": 4
+    },
+    {
+      "postBody": "asdadadsadasdasdasdasd",
+      "image": "",
+      "user": 2,
+      "likes": 0,
+      "views": 0,
+      "id": 5
     }
   ]
 }
