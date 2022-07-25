@@ -2,7 +2,13 @@
   "currentUser": {
     "id": 0
   },
-  "users": [],
+  "users": [
+    {
+      "username": "emir.akimzhanov",
+      "password": "0551495787",
+      "id": 1
+    }
+  ],
   "posts": [
     {
       "postBody": "Hello",
