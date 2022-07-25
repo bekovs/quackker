@@ -14,6 +14,10 @@ let image = document.querySelector("#image");
 let btnAdd = document.querySelector('#btn-add');
 let postsList = document.querySelector('#posts-list');
 
+let editPost = document.querySelector("#edit-post-body");
+let editImage = document.querySelector("#edit-image");
+let btnSaveEdit = document.querySelector("#btn-save-edit");
+
 let currentPage = 1;
 let searchVal = '';
 
@@ -113,17 +117,66 @@ async function render() {
   postsList.innerHTML = "";
 
   posts.forEach((post) => {
-    // console.log(post);
     let newPost = document.createElement("div");
     newPost.innerHTML = `<div class="card m-2" style="width: 50vw;">
     <img src=${post.image} class="card-img-top" alt="">
     <div class="card-body">
       <p class="card-text">${post.postBody}</p>
       <a href="#" class="btn btn-primary btn-delete" id=${post.id}>DELETE</a>
-      <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" id=${post.id} class="btn btn-primary btn-edit">EDIT</a>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#editModal" id=${post.id} class="btn btn-primary btn-edit">EDIT</a>
     </div>
   </div>`;
   postsList.append(newPost);
+  });
+}
+
+// delete
+document.addEventListener("click", async (e) => {
+  if (e.target.classList.contains("btn-delete")) {
+    let answer = confirm("Are you sure?");
+
+    if (answer) {
+      let id = e.target.id;
+      await fetch(`${API_Posts}/${id}`, {
+        method: "DELETE",
+      });
+      render();
+    }
+  }
+});
+
+// edit
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("btn-edit")) {
+    let id = e.target.id;
+    fetch(`${API_Posts}/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        editPost.value = data.postBody;
+        editImage.value = data.image;
+        btnSaveEdit.setAttribute("id", data.id);
+      });
+  }
+});
+
+btnSaveEdit.addEventListener("click", (e) => {
+  let id = e.target.id;
+  let edittedPost = {
+    postBody: editPost.value,
+    image: editImage.value,
+  };
+  saveEdit(edittedPost, id);
+});
+
+function saveEdit(edittedPost, id) {
+  fetch(`${API_Posts}/${id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify(edittedPost),
+  }).then(() => {
+    render();
   });
 }
 
