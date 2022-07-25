@@ -41,81 +41,13 @@
   ],
   "posts": [
     {
-      "postBody": "asd",
-      "image": "",
-      "user": 1,
-      "likes": 0,
-      "views": 0,
-      "id": 2
-    },
-    {
-      "postBody": "123",
-      "image": "",
-      "user": 1,
-      "likes": 0,
-      "views": 0,
-      "id": 3
-    },
-    {
-      "postBody": "asasdadasdasd",
-      "image": "",
-      "user": 2,
-      "likes": 0,
-      "views": 0,
-      "id": 4
-    },
-    {
-      "postBody": "asdadadsadasdasdasdasd",
-      "image": "",
-      "user": 2,
-      "likes": 0,
-      "views": 0,
-      "id": 5
-    },
-    {
-      "postBody": "hello world",
-      "image": "https://i.ytimg.com/vi/_Ef76tOZU44/hqdefault.jpg",
-      "user": 1,
-      "likes": 0,
-      "views": 0,
-      "date": "2022-07-25T09:55:32.437Z",
-      "id": 6
-    },
-    {
-      "postBody": "xxx",
-      "image": "xxx",
-      "user": 6,
-      "likes": 0,
-      "views": 0,
-      "date": "2022-07-25T10:57:27.356Z",
-      "id": 7
-    },
-    {
-      "postBody": "xxx",
-      "image": "xxx",
-      "user": 6,
-      "likes": 0,
-      "views": 0,
-      "date": "2022-07-25T10:57:27.846Z",
-      "id": 8
-    },
-    {
-      "postBody": "ya gei",
-      "image": "qq",
-      "user": 6,
-      "likes": 0,
-      "views": 0,
-      "date": "2022-07-25T10:57:39.421Z",
-      "id": 9
-    },
-    {
-      "postBody": "ya krytoi",
-      "image": "fdsafds",
+      "postBody": "fdsafdsa",
+      "image": "fdasfdas",
       "user": 7,
       "likes": 0,
       "views": 0,
-      "date": "2022-07-25T11:05:42.285Z",
-      "id": 10
+      "date": "2022-07-25T11:14:11.901Z",
+      "id": 1
     }
   ]
 }
