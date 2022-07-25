@@ -64,6 +64,21 @@
       "views": 0,
       "date": "2022-07-25T15:32:17.252Z",
       "id": 3
+    },
+    {
+      "postBody": "duck",
+      "image": "https://images.unsplash.com/photo-1563409236302-8442b5e644df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZHVja3xlbnwwfHwwfHw%3D&w=1000&q=80",
+      "user": "Sultan",
+      "userid": 2,
+      "likes": [
+        {
+          "id": 2,
+          "name": "Sultan"
+        }
+      ],
+      "views": 0,
+      "date": "2022-07-25T16:11:31.917Z",
+      "id": 4
     }
   ]
 }
