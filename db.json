@@ -27,17 +27,19 @@
       "username": "rage_ghoul",
       "password": "000",
       "id": 5
+    },
+    {
+      "username": "renat",
+      "password": "diplomat",
+      "id": 6
+    },
+    {
+      "username": "eldiyar",
+      "password": "123",
+      "id": 7
     }
   ],
   "posts": [
-    {
-      "postBody": "123",
-      "image": "",
-      "user": 1,
-      "likes": 0,
-      "views": 0,
-      "id": 1
-    },
     {
       "postBody": "asd",
       "image": "",
@@ -78,6 +80,42 @@
       "views": 0,
       "date": "2022-07-25T09:55:32.437Z",
       "id": 6
+    },
+    {
+      "postBody": "xxx",
+      "image": "xxx",
+      "user": 6,
+      "likes": 0,
+      "views": 0,
+      "date": "2022-07-25T10:57:27.356Z",
+      "id": 7
+    },
+    {
+      "postBody": "xxx",
+      "image": "xxx",
+      "user": 6,
+      "likes": 0,
+      "views": 0,
+      "date": "2022-07-25T10:57:27.846Z",
+      "id": 8
+    },
+    {
+      "postBody": "ya gei",
+      "image": "qq",
+      "user": 6,
+      "likes": 0,
+      "views": 0,
+      "date": "2022-07-25T10:57:39.421Z",
+      "id": 9
+    },
+    {
+      "postBody": "ya krytoi",
+      "image": "fdsafds",
+      "user": 7,
+      "likes": 0,
+      "views": 0,
+      "date": "2022-07-25T11:05:42.285Z",
+      "id": 10
     }
   ]
 }
