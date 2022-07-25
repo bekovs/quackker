@@ -7,6 +7,11 @@
       "username": "emir.akimzhanov",
       "password": "0551495787",
       "id": 1
+    },
+    {
+      "username": "fdsaf",
+      "password": "fdsafdsa",
+      "id": 2
     }
   ],
   "posts": [
@@ -25,6 +30,14 @@
       "likes": 0,
       "views": 0,
       "id": 3
+    },
+    {
+      "postBody": "fdsafdsa",
+      "image": "fdsafsda",
+      "user": 1,
+      "likes": 0,
+      "views": 0,
+      "id": 4
     }
   ]
 }

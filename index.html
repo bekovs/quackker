@@ -74,11 +74,38 @@
                 >Sign up</a
               >
             </li>        
-          <a class="nav-link active profile" href="#">Profile</a>
+          <a class="nav-link active profile"
+          data-bs-toggle="modal"
+          data-bs-target="#LogOut" href="#">Profile</a>
         </div>
       </div>
     </nav>
     <!-- end of navbar -->
+    <!-- modal for log out -->
+   <div
+   class="modal fade"
+   id="LogOut"
+   tabindex="-1"
+   aria-labelledby="exampleModalLabel"
+   aria-hidden="true"
+ >
+   <div class="modal-dialog">
+       <div class="modal-footer d-flex justify-content-between">
+         <button
+           type="button"
+           class="btn btn-secondary"
+           data-bs-dismiss="modal"
+         >
+           Close
+         </button>
+         <button type="button" class="btn btn-primary" id="submit">
+           Save changes
+         </button>
+       </div>
+     </div>
+   </div>
+ </div>
+  <!-- end of modal for log out -->
     <!-- modal window for sing up-->
     <div
       class="modal fade"
