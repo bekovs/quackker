@@ -30,6 +30,10 @@
     brightness(104%) contrast(97%);
 }
 
+.hello {
+  font-size: 2vw;
+}
+
 .views {
   margin-left: 2vw;
 }

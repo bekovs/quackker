@@ -56,6 +56,31 @@
         {
           "id": 5,
           "name": "rage_ghoul"
+        },
+        {
+          "id": 2,
+          "name": "Sultan"
+        }
+      ],
+      "views": 0,
+      "id": 1
+    },
+    {
+      "postBody": "asd",
+      "image": "",
+      "user": 1,
+      "likes": [
+        {
+          "id": 4,
+          "name": "Bado"
+        },
+        {
+          "id": 3,
+          "name": "Beks"
+        },
+        {
+          "id": 2,
+          "name": "Sultan"
         }
       ],
       "views": 0,
@@ -111,24 +136,7 @@
       "postBody": "asdadadsadasdasdasdasd",
       "image": "",
       "user": 2,
-      "likes": [
-        {
-          "id": 2,
-          "name": "Sultan"
-        },
-        {
-          "id": 4,
-          "name": "Bado"
-        },
-        {
-          "id": 3,
-          "name": "Beks"
-        },
-        {
-          "id": 7,
-          "name": "eldiyar"
-        }
-      ],
+      "likes": [],
       "views": 0,
       "id": 5
     },
@@ -136,12 +144,7 @@
       "postBody": "emir",
       "image": "emir",
       "user": 5,
-      "likes": [
-        {
-          "id": 5,
-          "name": "rage_ghoul"
-        }
-      ],
+      "likes": [],
       "views": 0,
       "date": "2022-07-25T11:20:51.241Z",
       "id": 6
