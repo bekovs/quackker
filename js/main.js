@@ -11,27 +11,15 @@ let loginNav = document.querySelector(".login");
 
 let postBody = document.querySelector("#post-body");
 let image = document.querySelector("#image");
-let btnAdd = document.querySelector('#btn-add');
-let postsList = document.querySelector('#posts-list');
+let btnAdd = document.querySelector("#btn-add");
+let postsList = document.querySelector("#posts-list");
 
 let currentPage = 1;
-let searchVal = '';
+let searchVal = "";
 
-const API_Posts = 'http://localhost:8000/posts';
+const API_Posts = "http://localhost:8000/posts";
 const API_Users = "http://localhost:8000/users";
 const API_CurrentUser = "http://localhost:8000/currentUser";
-
-
-
-// document.addEventListener("load", async () => {
-//   let currentUser = await fetch(API_CurrentUser)
-//     .then((data) => data.json())
-//     .then((res) => {
-//       res.id;
-//     });
-//   console.log(currentUser);
-// });
-// console.log(currentUser);
 
 submit.addEventListener("click", async () => {
   let obj = {
@@ -61,12 +49,15 @@ LogIn.addEventListener("click", () => {
           usernameSingIn.value == e.username &&
           passwordSignIn.value == e.password
         ) {
-          e.currentUser = usernameSingIn.value;
-          remFirst.remove();
-          remSecond.remove();
+          let user = {
+            id: e.id,
+            name: e.username,
+          };
+          localStorage.setItem("currentUser", JSON.stringify(user));
           LogIn.setAttribute(`data-bs-dismiss`, `modal`);
-          profile.style.display = `block`;
-          profile.innerHTML = e.username;
+          LogIn.addEventListener("click", () => {
+            window.location.reload();
+          });
         } else {
           return;
         }
@@ -74,14 +65,24 @@ LogIn.addEventListener("click", () => {
     });
 });
 
-btnAdd.addEventListener('click', async () => {
+let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+console.log(currentUser);
+
+if (currentUser) {
+  remFirst.remove();
+  remSecond.remove();
+  profile.style.display = `block`;
+  profile.innerHTML = currentUser.name;
+}
+
+btnAdd.addEventListener("click", async () => {
   let post = {
     postBody: postBody.value,
     image: image.value,
     user: 1, // current user id
     likes: 0,
     views: 0,
-  }
+  };
 
   if (!post.postBody.trim()) {
     alert("Post text is required");
@@ -91,16 +92,16 @@ btnAdd.addEventListener('click', async () => {
   await fetch(API_Posts, {
     method: "POST",
     headers: {
-      "Content-type": "application/json; charset=utf-8"
+      "Content-type": "application/json; charset=utf-8",
     },
-    body: JSON.stringify(post)
-  })
+    body: JSON.stringify(post),
+  });
 
-  postBody.value = '';
-  image.value = '';
+  postBody.value = "";
+  image.value = "";
 
   render();
-})
+});
 
 async function render() {
   let posts = await fetch(
@@ -123,8 +124,8 @@ async function render() {
       <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" id=${post.id} class="btn btn-primary btn-edit">EDIT</a>
     </div>
   </div>`;
-  postsList.append(newPost);
+    postsList.append(newPost);
   });
 }
 
-render()
+render();
