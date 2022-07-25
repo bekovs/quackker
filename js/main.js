@@ -21,7 +21,7 @@ let postsList = document.querySelector("#posts-list");
 let editPost = document.querySelector("#edit-post-body");
 let editImage = document.querySelector("#edit-image");
 let btnSaveEdit = document.querySelector("#btn-save-edit");
-
+let searchInp = document.querySelector("#searchInp");
 let currentPage = 1;
 let searchVal = "";
 
@@ -90,7 +90,7 @@ btnAdd.addEventListener("click", async () => {
     postBody: postBody.value,
     image: image.value,
     user: currentUser.id, // current user id
-    likes: 0,
+    likes: [],
     views: 0,
     date: new Date(),
   };
@@ -116,9 +116,9 @@ btnAdd.addEventListener("click", async () => {
 
 async function render() {
   let posts = await fetch(
-    `${API_Posts}?q=${searchVal}&_page=${currentPage}&_limit=10`
+    `${API_Posts}?q=${searchVal}&_page=${currentPage}&_limit=5`
   ).then((res) => res.json());
-
+  drawPageButtons();
   //   console.log(posts);
 
   // drawPageButtons();
@@ -172,7 +172,71 @@ async function render() {
     postsList.append(newPost);
   });
 }
+searchInp.addEventListener("input", () => {
+  searchVal = searchInp.value;
+  currentPage = 1;
+  render();
+});
+// ?pagination
+let prev = document.querySelector(".prev");
+let next = document.querySelector(".next");
+let paginationList = document.querySelector(".pagination-list");
 
+let pageTotalCount = 1;
+function drawPageButtons() {
+  fetch(`${API_Posts}?q=${searchVal}`)
+    .then((res) => res.json())
+    .then((data) => {
+      // console.log(data.length);
+      pageTotalCount = Math.ceil(data.length / 4);
+      paginationList.innerHTML = ``;
+      for (let i = 1; i <= pageTotalCount; i++) {
+        if (currentPage == i) {
+          let page = document.createElement("li");
+          paginationList.append(page);
+          page.innerHTML = `<li class="page-item active"><a class="page-link page_number" href="#">${i}</a></li>`;
+        } else {
+          let page = document.createElement("li");
+          paginationList.append(page);
+          page.innerHTML = `<li class="page-item"><a class="page-link page_number" href="#">${i}</a></li>`;
+        }
+      }
+      if (currentPage == 1) {
+        prev.classList.add("disabled");
+      } else {
+        prev.classList.remove("disabled");
+      }
+      if (currentPage == pageTotalCount) {
+        next.classList.add("disabled");
+      } else {
+        next.classList.remove("disabled");
+      }
+    });
+}
+
+prev.addEventListener("click", (e) => {
+  if (currentPage <= 1) {
+    return;
+  }
+  currentPage--;
+  render();
+});
+
+next.addEventListener("click", (e) => {
+  if (currentPage >= pageTotalCount) {
+    return;
+  }
+  currentPage++;
+  render();
+});
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("page_number")) {
+    currentPage = e.target.innerText;
+    render();
+  }
+});
+render();
 function getUserName(id) {
   let res = fetch(`${API_Users}/${id}`)
     .then((data) => data.json())

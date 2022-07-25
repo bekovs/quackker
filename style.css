@@ -15,7 +15,7 @@
   font-size: 1rem;
 }
 
-.like-heart img{
+.like-heart img {
   width: 2rem;
   margin-right: 0.5rem;
 }
@@ -25,8 +25,9 @@
   color: black;
 }
 
-img:hover {
-  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+.like-heart img:hover {
+  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg)
+    brightness(104%) contrast(97%);
 }
 
 .views {
@@ -34,5 +35,4 @@ img:hover {
 }
 
 .card-body .btn {
-
 }

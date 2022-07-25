@@ -41,13 +41,119 @@
   ],
   "posts": [
     {
-      "postBody": "fdsafdsa",
-      "image": "fdasfdas",
-      "user": 7,
-      "likes": 0,
+      "postBody": "asd",
+      "image": "",
+      "user": 1,
+      "likes": [
+        {
+          "id": 4,
+          "name": "Bado"
+        },
+        {
+          "id": 3,
+          "name": "Beks"
+        },
+        {
+          "id": 5,
+          "name": "rage_ghoul"
+        }
+      ],
       "views": 0,
-      "date": "2022-07-25T11:14:11.901Z",
-      "id": 1
+      "id": 2
+    },
+    {
+      "postBody": "123456",
+      "image": "",
+      "user": 1,
+      "likes": [
+        {
+          "id": 4,
+          "name": "Bado"
+        },
+        {
+          "id": 3,
+          "name": "Beks"
+        },
+        {
+          "id": 5,
+          "name": "rage_ghoul"
+        }
+      ],
+      "views": 0,
+      "id": 3
+    },
+    {
+      "postBody": "asasdadasdasd",
+      "image": "",
+      "user": 2,
+      "likes": [
+        {
+          "id": 4,
+          "name": "Bado"
+        },
+        {
+          "id": 3,
+          "name": "Beks"
+        },
+        {
+          "id": 7,
+          "name": "eldiyar"
+        },
+        {
+          "id": 5,
+          "name": "rage_ghoul"
+        }
+      ],
+      "views": 0,
+      "id": 4
+    },
+    {
+      "postBody": "asdadadsadasdasdasdasd",
+      "image": "",
+      "user": 2,
+      "likes": [
+        {
+          "id": 2,
+          "name": "Sultan"
+        },
+        {
+          "id": 4,
+          "name": "Bado"
+        },
+        {
+          "id": 3,
+          "name": "Beks"
+        },
+        {
+          "id": 7,
+          "name": "eldiyar"
+        }
+      ],
+      "views": 0,
+      "id": 5
+    },
+    {
+      "postBody": "emir",
+      "image": "emir",
+      "user": 5,
+      "likes": [
+        {
+          "id": 5,
+          "name": "rage_ghoul"
+        }
+      ],
+      "views": 0,
+      "date": "2022-07-25T11:20:51.241Z",
+      "id": 6
+    },
+    {
+      "postBody": "finalo4ka",
+      "image": "fdsafdsaf",
+      "user": 5,
+      "likes": [],
+      "views": 0,
+      "date": "2022-07-25T11:35:54.852Z",
+      "id": 7
     }
   ]
 }
